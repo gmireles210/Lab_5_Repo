@@ -30,8 +30,8 @@ popup.setContent(popupContent);
 
     map.on('click', function(e) {
         var container = L.DomUtil.create('div'),
-          startBtn = createButton('Start from this location', container),
-          destBtn = createButton('Go to this location', container);
+          startBtn = createButton('Starting Waypoint', container),
+          destBtn = createButton('Ending Waypoint', container);
 
         L.popup()
             .setContent(container)
