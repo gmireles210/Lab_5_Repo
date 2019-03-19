@@ -23,7 +23,7 @@ function onLocationFound(e) {
   var coordinates = e.latlng.lat + ", " + e.latlng.lng
 
   L.marker(e.latlng).addTo(map)
-    .bindPopup("You are within " + radius / 3 + " feet of this point." + "<br>" + "Click on bottom tip of blue marker to use this location to use as a start waypoint.").openPopup();
+    .bindPopup("You are within " + radius / 3 + " feet of this point." + "<br>" + "Click on bottom tip of blue marker to use this location to use as a start waypoint, then click another location on map to get directions.").openPopup();
 
   //L.circle(e.latlng, radius).addTo(map); // this adds a Leaflet circle to the map at the lat and long returned by the locate function. Its radius is set to the var radius defined above.
 
