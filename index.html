@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TGIS 504 Lab 5</title> 
+
+    <!--Leaflet CSS:-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+      
+      <!--Moblie Settings.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+
+    
+    <!--Leaflet-routing-machine JS and CSS:-->
+    <link rel="stylesheet" href="leaflet-routing-machine.css" />
+    <script src="leaflet-routing-machine.js"></script>
+
+    <!--Nom. Geocoder plugins, JS and CSS:-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js">
+    
+  </script>
+
+    <style type="text/css">
+        body {
+         padding: 0;
+         margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100vw;
+        }
+
+        
+        .btn1 {
+            position: absolute;
+            top: 10px;
+            left: 55px;
+            z-index: 1000;
+            height: 40px;
+            width: 200px;
+            text-decoration: none;
+            text-align: center;
+            color: grey; 
+            line-height: 26px;
+            padding-top: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+ <!--Locate Button--> 
+<button class="btn1" onclick ="locateFunction()">Go To My Location</button>
+
+
+<!--Map Display--> 
+<div id="map" class="map"></div>
+
+<script>
+  var map = L.map('map').setView([47.25, -122.44], 11);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18, 
+        id: 'mapbox.streets',
+        accessToken:'pk.eyJ1IjoiZ21pcmVsZXMyMTAiLCJhIjoiY2puemlrN2gyMWZkczNra2IxaGJ0Zm1tZSJ9.MLx2_iXhq4cWBnXTK4j2Rg',
+    }).addTo(map);
+</script>
+
+<!--Locate-function and Routing scripts:--> 
+<script src="location-function.js"></script>
+<script src="routing.js"></script>
+
+</body>
+</html>
